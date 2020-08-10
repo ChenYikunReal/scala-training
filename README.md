@@ -70,3 +70,58 @@
 - \>:
 - \#
 - @
+
+## Scala数据类型
+|数据类型 | 描述|
+|:---:|:---:|
+|Byte | 8位有符号补码整数。数值区间为 -128 到 127
+|Short | 16位有符号补码整数。数值区间为 -32768 到 32767
+|Int | 32位有符号补码整数。数值区间为 -2147483648 到 2147483647
+|Long | 64位有符号补码整数。数值区间为 -9223372036854775808 到 9223372036854775807
+|Float | 32 位, IEEE 754 标准的单精度浮点数
+|Double | 64 位 IEEE 754 标准的双精度浮点数
+|Char | 16位无符号Unicode字符, 区间值为 U+0000 到 U+FFFF
+|String | 字符序列
+|Boolean | true或false
+|Unit | 表示无值，和其他语言中void等同，用作不返回任何结果的方法的结果类型<br/>Unit只有一个实例值，写成()
+|Null | null 或空引用
+|Nothing | Nothing类型在Scala的类层级的最底端；它是任何其他类型的子类型。
+|Any | Any是所有其他类的超类
+|AnyRef | AnyRef类是Scala里所有引用类(reference class)的基类
+
+## Scala访问控制符
+- private
+- protected（包权限+子类继承可得）
+- public（默认）
+
+## Scala运算符
+Scala的逻辑运算符没有\&和\|
+
+## Scala方法和函数
+- Scala有方法与函数，二者在语义上的区别很小。Scala方法是类的一部分，而函数是一个对象可以赋值给一个变量。换句话来说在类中定义的函数即是方法。
+- Scala中的方法跟Java的类似，方法是组成类的一部分。
+- Scala中的函数则是一个完整的对象，Scala中的函数其实就是继承了Trait的类的对象。
+- Scala中使用val语句可以定义函数，def语句定义方法。
+
+
+- 方法是一个以def开头的带有参数列表（可以无参数列表）的一个逻辑操作块，这正如object或者class中的成员方法一样。
+- 函数是一个赋值给一个变量（或者常量）的匿名方法（带或者不带参数列表），并且通过=>转换符号跟上逻辑代码块的一个表达式。=>转换符号后面的逻辑代码块的写法与method的body部分相同。
+
+
+- 函数可作为一个参数传入到方法中，而方法不行。
+- 在Scala中无法直接操作方法，如果要操作方法，必须先将其转换成函数。有两种方法可以将方法转换成函数：`val f1 = m _`、`val f1: (Int) => Int = m`。
+- 函数必须要有参数列表，而方法可以没有参数列表。
+- 在函数出现的地方我们可以提供一个方法
+    - 在需要函数的地方，如果传递一个方法，会自动进行ETA展开（把方法转换为函数）
+    - 如果我们直接把一个方法赋值给变量会报错。如果我们指定变量的类型就是函数，那么就可以通过编译
+    - 当然我们也可以强制把一个方法转换给函数，这就用到了Scala中的部分应用函数
+
+## Scala字符串函数
+![在这里插入图片描述](https://github.com/ChenYikunReal/scala_learning/blob/master/images/scala-string-functions.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg5NjMxOA==,size_16,color_FFFFFF,t_70)
+
+## Scala数组函数
+![在这里插入图片描述](https://github.com/ChenYikunReal/scala_learning/blob/master/images/scala-array-functions.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg5NjMxOA==,size_16,color_FFFFFF,t_70)
+
+## Scala迭代器函数
+![在这里插入图片描述](https://github.com/ChenYikunReal/scala_learning/blob/master/images/scala-iterator-functions.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg5NjMxOA==,size_16,color_FFFFFF,t_70)
+
