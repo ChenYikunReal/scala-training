@@ -125,3 +125,33 @@ Scala的逻辑运算符没有\&和\|
 ## Scala迭代器函数
 ![在这里插入图片描述](https://github.com/ChenYikunReal/scala_learning/blob/master/images/scala-iterator-functions.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg5NjMxOA==,size_16,color_FFFFFF,t_70)
 
+## Scala集合
+[Scala集合](https://www.runoob.com/scala/scala-collections.html)
+
+## Scala特征构造器的顺序
+特征也可以有构造器，由字段的初始化和其他特征体中的语句构成。这些语句在任何混入该特征的对象在构造时都会被执行。
+
+构造器的执行顺序：
+1. 调用超类的构造器
+2. 特征构造器在超类构造器之后、类构造器之前执行
+3. 特征由左到右被构造
+4. 每个特征当中，父特征先被构造
+5. 如果多个特征共有一个父特征，父特征不会被重复构造
+6. 所有特征被构造完毕，子类被构造
+
+构造器的顺序是类的线性化的反向。线性化是描述某个类型的所有超类型的一种技术规格。 
+
+## Scala正则表达式
+
+正则表达式规则：<br/><br/>
+![在这里插入图片描述](https://github.com/ChenYikunReal/scala_learning/blob/master/images/regex-rules.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg5NjMxOA==,size_16,color_FFFFFF,t_70)
+<br/>
+正则表达式实例：<br/><br/>
+![在这里插入图片描述](https://github.com/ChenYikunReal/scala_learning/blob/master/images/regex-examples.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg5NjMxOA==,size_16,color_FFFFFF,t_70)
+
+## Scala样例类声明的过程
+此过程自动进行了以下行为：
+- 构造器的每个参数都成为val，除非显式被声明为var，但是并不推荐这么做
+- 在伴生对象中提供了apply方法，所以可以不使用new关键字就可构建对象
+- 提供unapply方法使模式匹配可以工作
+- 生成toString、equals、hashCode和copy方法，除非显示给出这些方法的定义
